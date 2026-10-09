@@ -26,7 +26,7 @@ test.describe('Pruebas de inicio de sesión', () => {
     // DWS-LOG-003 Email formato incorrecto
     test('DWS-LOG-003 Email formato incorrecto', async () => {
         await login.ingresar("correo_incorrecto", "");
-        await expect(login.emailError).toContainText("Please enter a valid email address.")
+        await expect(login.mensajeError).toContainText("Please enter a valid email address.")
     });
 
 

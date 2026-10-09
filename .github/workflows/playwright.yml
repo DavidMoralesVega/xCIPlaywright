@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: Pruebas automaticas
 on:
   push:
     branches: [ main, master ]

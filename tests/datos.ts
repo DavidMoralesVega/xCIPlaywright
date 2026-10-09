@@ -1,4 +1,4 @@
 export const usuario = {
-    email: "lucastorrez@gmail.com",
+    email: "qa.unior.modulo4@example.com",
     clave: "Unior2026!"
 }

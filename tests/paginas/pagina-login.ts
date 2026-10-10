@@ -7,6 +7,7 @@ export class PaginaLogin {
     readonly botonEntrar: Locator;
     readonly mensajeError: Locator;
     readonly emailError: Locator;
+    readonly enlaceSalir: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -15,6 +16,7 @@ export class PaginaLogin {
         this.botonEntrar = page.getByRole('button', { name: 'Log in' });
         this.mensajeError = page.locator('.validation-summary-errors');
         this.emailError = page.locator('span[for="Email"]');
+        this.enlaceSalir = page.getByRole('link', { name: 'Log out' });
     }
 
     async abrir() {

@@ -1,5 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
-
+import { defineBddConfig } from 'playwright-bdd';
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
@@ -11,6 +11,13 @@ import { defineConfig, devices } from '@playwright/test';
 /**
  * See https://playwright.dev/docs/test-configuration.
  */
+
+
+const testDirBdd = defineBddConfig({
+  features: 'features/*.feature',
+  steps: 'features/pasos.ts',
+});
+
 export default defineConfig({
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -48,6 +55,14 @@ export default defineConfig({
       name: 'webkit',
       use: { ...devices['Desktop Safari'] },
     },
+
+    {
+      name: 'bdd',
+      testDir: testDirBdd,
+      use: { ...devices['Desktop Chrome'] },
+    },
+
+
 
     /* Test against mobile viewports. */
     // {
